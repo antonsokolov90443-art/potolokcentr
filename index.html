@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Потолок Центр — фабрика натяжных потолков | Пермь</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; color: #1a1a1a; line-height: 1.6; background: #f4faf9; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+header { background: #0f3d3a; position: sticky; top: 0; z-index: 100; padding: 15px 0; border-bottom: 2px solid #5fc9b8; }
+.header-inner { display: flex; justify-content: space-between; align-items: center; }
+.logo { display: flex; align-items: center; gap: 12px; }
+.logo-circle { width: 52px; height: 52px; background: #0f3d3a; border: 2px solid #5fc9b8; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-weight: 900; color: #5fc9b8; font-size: 11px; text-align: center; line-height: 1.1; }
+.logo h1 { font-size: 20px; color: #fff; }
+.logo p { font-size: 11px; color: #5fc9b8; }
+nav a { margin: 0 12px; text-decoration: none; color: #ccc; font-weight: 500; font-size: 14px; }
+nav a:hover { color: #5fc9b8; }
+.header-phone { font-weight: 700; color: #5fc9b8; text-decoration: none; font-size: 15px; }
+.btn { display: inline-block; background: #5fc9b8; color: #0f3d3a; padding: 12px 28px; border-radius: 4px; text-decoration: none; font-weight: 700; border: none; cursor: pointer; font-size: 15px; transition: 0.3s; }
+.btn:hover { background: #4ab0a0; transform: translateY(-2px); }
+.btn-outline { background: transparent; border: 2px solid #5fc9b8; color: #5fc9b8; }
+.btn-outline:hover { background: #5fc9b8; color: #0f3d3a; }
+.hero { background: #0f3d3a; color: #fff; padding: 80px 0; position: relative; overflow: hidden; }
+.hero::after { content: 'POTOLOK CENTR'; position: absolute; bottom: -60px; right: -30px; font-size: 130px; font-weight: 900; color: rgba(95,201,184,0.06); letter-spacing: 8px; }
+.hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; position: relative; z-index: 1; }
+.hero h2 { font-size: 44px; font-weight: 900; line-height: 1.15; margin-bottom: 20px; }
+.hero h2 span { color: #5fc9b8; }
+.hero p { font-size: 17px; color: #bbb; margin-bottom: 30px; }
+.hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
+.hero-stats { display: flex; gap: 30px; margin-top: 40px; }
+.hero-stats .num { font-size: 28px; font-weight: 900; color: #5fc9b8; }
+.hero-stats .label { font-size: 13px; color: #888; }
+.hero-photo { border-radius: 4px; overflow: hidden; height: 480px; }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+section { padding: 80px 0; }
+.section-title { text-align: center; margin-bottom: 50px; }
+.section-title h2 { font-size: 34px; font-weight: 900; margin-bottom: 10px; }
+.section-title p { color: #888; font-size: 16px; }
+.section-title h2::after { content: ''; display: block; width: 50px; height: 3px; background: #5fc9b8; margin: 15px auto 0; }
+.about { background: #fff; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.about-grid h3 { font-size: 26px; margin-bottom: 20px; }
+.about-grid p { margin-bottom: 15px; color: #555; font-size: 16px; }
+.about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+.feature { background: #f4faf9; padding: 20px; border-radius: 4px; border-left: 3px solid #5fc9b8; }
+.feature .icon { font-size: 26px; margin-bottom: 10px; }
+.feature h4 { font-size: 15px; margin-bottom: 5px; }
+.feature p { font-size: 13px; color: #888; }
+.about-photo { border-radius: 4px; overflow: hidden; height: 450px; }
+.about-photo img { width: 100%; height: 100%; object-fit: cover; }
+.services { background: #0f3d3a; color: #fff; }
+.services .section-title h2 { color: #fff; }
+.services .section-title p { color: #aaa; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+.service-card { background: #1a4a46; border-radius: 4px; padding: 30px; transition: 0.3s; border-top: 3px solid #5fc9b8; }
+.service-card:hover { transform: translateY(-5px); background: #1f5651; }
+.service-card .icon { font-size: 36px; margin-bottom: 15px; }
+.service-card h3 { font-size: 18px; margin-bottom: 10px; color: #fff; }
+.service-card p { color: #aaa; font-size: 14px; }
+.prices { background: #f4faf9; }
+.price-table { background: #fff; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 800px; margin: 0 auto; }
+.price-table table { width: 100%; border-collapse: collapse; }
+.price-table th { background: #0f3d3a; color: #5fc9b8; padding: 18px; text-align: left; font-size: 15px; }
+.price-table td { padding: 15px 18px; border-bottom: 1px solid #eef5f4; font-size: 15px; }
+.price-table tr:last-child td { border-bottom: none; }
+.price-table tr:hover { background: #f4faf9; }
+.price-table .price { font-weight: 700; color: #0f3d3a; font-size: 16px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.gallery-item { border-radius: 4px; overflow: hidden; height: 280px; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
+.gallery-item:hover img { transform: scale(1.05); }
+.cta { background: linear-gradient(135deg, #5fc9b8 0%, #4ab0a0 100%); color: #0f3d3a; text-align: center; padding: 60px 0; }
+.cta h2 { font-size: 32px; font-weight: 900; margin-bottom: 15px; }
+.cta p { font-size: 17px; margin-bottom: 30px; }
+.cta .btn { background: #0f3d3a; color: #5fc9b8; }
+.cta .btn:hover { background: #1a4a46; }
+.contacts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+.contacts-grid h3 { font-size: 26px; margin-bottom: 25px; }
+.contact-item { display: flex; gap: 15px; margin-bottom: 20px; align-items: flex-start; }
+.contact-item .icon { font-size: 22px; }
+.contact-item h4 { font-size: 15px; margin-bottom: 3px; }
+.contact-item p { color: #666; font-size: 15px; }
+.contact-item a { color: #3a8a7c; text-decoration: none; font-weight: 600; }
+.contact-map { background: #f0f0f0; border-radius: 4px; height: 400px; display: flex; align-items: center; justify-content: center; color: #888; font-size: 16px; }
+footer { background: #0f3d3a; color: #888; padding: 30px 0; text-align: center; font-size: 13px; }
+footer a { color: #5fc9b8; text-decoration: none; }
+@media (max-width: 768px) {
+  .hero-inner, .about-grid, .contacts-grid { grid-template-columns: 1fr; }
+  .hero h2 { font-size: 30px; }
+  .services-grid, .gallery-grid { grid-template-columns: 1fr; }
+  nav { display: none; }
+  .hero-stats { flex-wrap: wrap; gap: 20px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="logo">
+      <div class="logo-circle">ПЦ</div>
+      <div><h1>Потолок Центр</h1><p>фабрика натяжных потолков</p></div>
+    </div>
+    <nav>
+      <a href="#about">О компании</a>
+      <a href="#services">Услуги</a>
+      <a href="#prices">Товары</a>
+      <a href="#gallery">Склад</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a href="tel:+79223751411" class="header-phone">+7 (922) 375-14-11</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <h2>Потолок Центр —<br><span>всё для монтажа потолков</span></h2>
+      <p>Фабрика натяжных потолков и комплектующих в Перми. Работаем с 2011 года — знаем, что нужно мастерам. Всё в наличии: от гарпуна до инструмента.</p>
+      <div class="hero-buttons">
+        <a href="#prices" class="btn">Смотреть товары</a>
+        <a href="tel:+79223751411" class="btn btn-outline">📞 Позвонить</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="num">596</div><div class="label">подписчиков</div></div>
+        <div><div class="num">4</div><div class="label">адреса в Перми</div></div>
+        <div><div class="num">7 дней</div><div class="label">работаем в неделю</div></div>
+      </div>
+    </div>
+    <div class="hero-photo"><img src="photo1.jpg" alt="Потолок Центр"></div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>О компании</h2>
+      <p>Работаем до последнего потолка с заботой о клиенте</p>
+    </div>
+    <div class="about-grid">
+      <div>
+        <h3>Почему нас выбирают монтажники и бригады</h3>
+        <p>«Потолок Центр» — это фабрика натяжных потолков и комплектующих в Перми. Мы работаем с 2011 года и знаем, что нужно мастерам для качественного монтажа.</p>
+        <p>У нас всё в наличии — от гарпуна до профессионального инструмента. Работаем 7 дней в неделю.</p>
+        <div class="about-features">
+          <div class="feature"><div class="icon">📦</div><h4>Всё в наличии</h4><p>От гарпуна до инструмента</p></div>
+          <div class="feature"><div class="icon">📅</div><h4>С 2011 года</h4><p>Знаем, что нужно мастерам</p></div>
+          <div class="feature"><div class="icon">🕐</div><h4>7 дней в неделю</h4><p>Работаем без выходных</p></div>
+          <div class="feature"><div class="icon">🚚</div><h4>4 адреса</h4><p>По всей Перми</p></div>
+        </div>
+      </div>
+      <div class="about-photo"><img src="photo2.jpg" alt="Склад"></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-title"><h2>Что мы предлагаем</h2><p>Полный ассортимент для монтажа потолков</p></div>
+    <div class="services-grid">
+      <div class="service-card"><div class="icon">📐</div><h3>Профили</h3><p>Flexy, АКС, Парсек, Svet 30/50, TREK — любые размеры</p></div>
+      <div class="service-card"><div class="icon">🖼️</div><h3>Вставки</h3><p>SCREEN 30 BLACK и другие декоративные вставки</p></div>
+      <div class="service-card"><div class="icon">💡</div><h3>Освещение</h3><p>Магнитные вентиляторы, диммеры, пульты, блоки питания</p></div>
+      <div class="service-card"><div class="icon">🔧</div><h3>Инструмент</h3><p>Биты DeWalt, держатели, вырезки, профессиональный инструмент</p></div>
+      <div class="service-card"><div class="icon">📏</div><h3>Лазерные уровни</h3><p>Точность на любом объекте</p></div>
+      <div class="service-card"><div class="icon">⚡</div><h3>Электрика</h3><p>Блоки питания 24V, 60W–250W LUX</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="prices" id="prices">
+  <div class="container">
+    <div class="section-title"><h2>Товары и цены</h2><p>Актуальные цены — уточняйте в ВК или по телефону</p></div>
+    <div class="price-table"><table>
+      <tr><th>Товар</th><th>Цена</th></tr>
+      <tr><td>Вставка SCREEN 30 BLACK</td><td class="price">518 ₽</td></tr>
+      <tr><td>Профиль Flexy Svet 50</td><td class="price">896 ₽</td></tr>
+      <tr><td>Профиль Flexy Svet 30</td><td class="price">840 ₽</td></tr>
+      <tr><td>Профиль Flexy TREK</td><td class="price">1 500 ₽</td></tr>
+      <tr><td>Лазерный уровень</td><td class="price">12 040 ₽</td></tr>
+      <tr><td>Вырезка внутренняя</td><td class="price">1 125 ₽</td></tr>
+      <tr><td>Магнитный вентилятор</td><td class="price">1 725 ₽</td></tr>
+      <tr><td>Диммер V1 SMART</td><td class="price">2 250 ₽</td></tr>
+      <tr><td>Пульт RT9 SMART</td><td class="price">3 000 ₽</td></tr>
+      <tr><td>Пульт RT1 SMART</td><td class="price">2 700 ₽</td></tr>
+      <tr><td>Бита DeWalt ударная</td><td class="price">216 ₽</td></tr>
+      <tr><td>Бита DeWalt</td><td class="price">168 ₽</td></tr>
+      <tr><td>Держатель DeWalt магнитный</td><td class="price">600 ₽</td></tr>
+      <tr><td>Инструмент КВТ</td><td class="price">2 280 ₽</td></tr>
+      <tr><td>Блок питания LUX 24V 250W</td><td class="price">2 025 ₽</td></tr>
+      <tr><td>Блок питания LUX 24V 200W</td><td class="price">2 430 ₽</td></tr>
+      <tr><td>Блок питания LUX 24V 150W</td><td class="price">2 227 ₽</td></tr>
+      <tr><td>Блок питания LUX 24V 100W</td><td class="price">2 025 ₽</td></tr>
+      <tr><td>Блок питания LUX 24V 30W</td><td class="price">1 215 ₽</td></tr>
+    </table></div>
+    <p style="text-align:center; color:#888; font-size:14px; margin-top:20px;">Полный ассортимент — в группе ВК или по телефону.</p>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <div class="section-title"><h2>Наш склад</h2><p>Всё в наличии — приезжайте и выбирайте</p></div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="photo3.jpg" alt="Склад"></div>
+      <div class="gallery-item"><img src="photo4.jpg" alt="Склад"></div>
+      <div class="gallery-item"><img src="photo5.jpg" alt="Склад"></div>
+      <div class="gallery-item"><img src="photo6.jpg" alt="Склад"></div>
+      <div class="gallery-item"><img src="photo7.jpg" alt="Склад"></div>
+      <div class="gallery-item"><img src="photo2.jpg" alt="Склад"></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Закажите прямо сейчас</h2>
+    <p>Позвоните или напишите в ВК — подберём нужные комплектующие</p>
+    <a href="tel:+79223751411" class="btn">📞 Позвонить</a>
+  </div>
+</section>
+
+<section id="contacts">
+  <div class="container">
+    <div class="section-title"><h2>Контакты</h2><p>Ждём вас на складе</p></div>
+    <div class="contacts-grid">
+      <div>
+        <h3>Потолок Центр</h3>
+        <div class="contact-item"><div class="icon">📍</div><div><h4>Адрес</h4><p>г. Пермь, ул. Самолетная, 66а<br>(и ещё 3 адреса в городе)</p></div></div>
+        <div class="contact-item"><div class="icon">📞</div><div><h4>Телефон</h4><p><a href="tel:+79223751411">+7 (922) 375-14-11</a></p></div></div>
+        <div class="contact-item"><div class="icon">🌐</div><div><h4>ВКонтакте</h4><p><a href="https://vk.com/potolok_centr" target="_blank">vk.com/potolok_centr</a></p></div></div>
+        <div class="contact-item"><div class="icon">🕐</div><div><h4>Режим работы</h4><p>ПН–ПТ: 8:30–23:00<br>Работаем 7 дней в неделю</p></div></div>
+      </div>
+      <div class="contact-map">🗺️ Карта — ул. Самолетная, 66а, Пермь</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Фабрика натяжных потолков «Потолок Центр» · Пермь, ул. Самолетная, 66а · <a href="tel:+79223751411">+7 (922) 375-14-11</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
